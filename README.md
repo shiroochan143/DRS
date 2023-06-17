@@ -21,6 +21,9 @@ From there copy paste the 'Engine' value and at the same time, open your mysql c
    - Type "python manage.py startapp myapp"
    - You should have downloaded a bunch of files like forms, models, views, etc.
    - From there it's a matter of copy pasting the codes inside this repository.
+   - Then do this, in "settings.py"
+   - ![image](https://github.com/shiroochan143/DRS/assets/108950973/f2d1880f-0051-4250-999e-c1742da521c8)
+   - Put the name of your app in the list like above.
 
 4. Configuring the app:
    - Once you copy pasted the contents of "models.py" do this following steps
