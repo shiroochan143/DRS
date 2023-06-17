@@ -31,5 +31,5 @@ From there copy paste the 'Engine' value and at the same time, open your mysql c
   
 5. Running the app:
    - Type "python manage.py runserver"
-   - then view "http://localhost:8000/{whatever url we have from urls.py}"
+   - then view "http://localhost:8000/{whatever url we have from urls}"
    - example "http://localhost:8000/dashboard/appointment-schedule/today
