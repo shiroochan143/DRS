@@ -1,0 +1,28 @@
+<head>
+    <title>MySQL Table</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>Last Appointment</th>
+                <th>Current Appointment</th>
+                <th>Appointment Time</th>
+                <th>Procedure</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ appointment_schedule.patient_id }}</td>
+                <td>{{ appointment_schedule.last_appointment }}</td>
+                <td>{{ appointment_schedule.current_appointment_schedule }}</td>
+                <td>{{ appointment_schedule.appointment_time }}</td>
+                <td>{{ appointment_schedule.procedure }}</td>
+                <td>{{ appointment_schedule.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'appointment_schedule_update' pk=appointment_schedule.pk %}">Update Appointment</a>
+</body>

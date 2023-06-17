@@ -1,0 +1,14 @@
+<h1>Patient Record Detail</h1>
+
+
+
+<p><strong>Last Name:</strong> {{ patient_record.last_name }}</p>
+<p><strong>First name:</strong> {{ patient_record.first_name }}</p>
+<p><strong>Age:</strong> {{ patient_record.age }}</p>
+<p><strong>Sex:</strong> {{ patient_record.sex }}</p>
+<p><strong>Contact Number:</strong> {{ patient_record.contact_number }}</p>
+<p><strong>Email Address:</strong> {{ patient_record.email }}</p>
+
+
+
+<a href="{% url 'patient_record_update' pk=patient_record.pk %}">Update</a>

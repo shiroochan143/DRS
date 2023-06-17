@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Appointment</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function fetchLatestAppointmentSchedule() {
+      var patientId = $('#id_patient_id').val();
+      var url = '/fetch_latest_appointment_schedule/' + patientId + '/';
+      
+      $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          $('#id_last_appointment').val(data.last_appointment);
+        },
+        error: function() {
+          console.log('Error occurred while fetching latest appointment schedule.');
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>Create Appointment</h1>
+  <form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    
+    <input type="submit" value="Create Appointment">
+  </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Patient</title>
+</head>
+<body>
+  
+  <h1>Search Patient</h1>
+  <form method="POST" action="{% url 'patient_record_search' %}">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Search</button>
+  </form>
+  <a href="{% url 'patient_record_create' %}">Create New Patient Record</a>
+</body>
+</html>

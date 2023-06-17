@@ -1,0 +1,9 @@
+<h1>Patient List Test</h1>
+
+<ul>
+    {% for patient_record in patient_records %}
+    <li><a href="{% url 'patient_record_detail' pk=patient_record.pk %}">{{ patient_record.last_name }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'patient_record_create' %}">Create New Patient Record</a>

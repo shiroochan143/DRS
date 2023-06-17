@@ -1,0 +1,9 @@
+<h1>Product List</h1>
+
+<ul>
+    {% for product in products %}
+    <li><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'product_create' %}">Create New Product</a>

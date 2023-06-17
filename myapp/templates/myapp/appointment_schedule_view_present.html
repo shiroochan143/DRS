@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Appointment Schedule</title>
+</head>
+<body>
+  <h1>Appointment Schedule</h1>
+  <form method="GET" action="{% url 'appointment_schedule_view_present' %}">
+    <button type="submit" name="sort" value="date">Sort by Date</button>
+    <button type="submit" name="sort" value="time">Sort by Time</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Patient ID</th>
+        <th>Appointment Date</th>
+        <th>Appointment Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for appointment in appointments %}
+        <tr>
+          <td>{{ appointment.patient_id }}</td>
+          <td>{{ appointment.current_appointment_schedule }}</td>
+          <td>{{ appointment.appointment_time }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

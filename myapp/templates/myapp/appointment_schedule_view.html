@@ -1,0 +1,9 @@
+<h1>Appointment Schedule</h1>
+
+<ul>
+    {% for appointment_schedule in appointment_schedules %}
+    <li><a href="{% url 'appointment_schedule_detail' pk=appointment_schedule.pk %}">{{ appointment_schedule.patient_id }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'appointment_schedule_create' %}">Create New Appointment Schedule</a>
