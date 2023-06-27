@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Patient</title>
+    {%load static%}
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design.css'%}"> -->
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design_choices.css'%}"> -->
+
+    <title>DCRS Dashboard</title>
+    
 </head>
 <body>
-  
-  <h1>Search Patient</h1>
-  <form method="POST" action="{% url 'patient_record_search' %}">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Search</button>
-  </form>
-  <a href="{% url 'patient_record_create' %}">Create New Patient Record</a>
+    <div class="topsidenav">
+        <input type="text" placeholder="Search..">
+    </div>
+    <div class="navbar-lagayan" id="design">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <img src="dental_logo.png" width="128" height="128">
+			</div>
+			
+            <div class="navbar-buttons1">
+                <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+            </div>
+            <div class="navbar-buttons2">
+                <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+            </div>
+            <div class="navbar-buttons3">
+                <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+            </div>
+
+        </div>
+        </div>
+        <!-- Put Content Here!-->
+        <h1>Search Patient</h1>
+        <form method="POST" action="{% url 'patient_record_search' %}">
+          {% csrf_token %}
+          {{ form }}
+          <button type="submit">Search</button>
+        </form>
+        <a href="{% url 'patient_record_create' %}">Create New Patient Record</a>
 </body>
 </html>

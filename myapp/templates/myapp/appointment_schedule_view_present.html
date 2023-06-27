@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
+  {% load static %}
+  <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}"> -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/design_appointment_schedule_view_present.css' %}">
   <title>Appointment Schedule</title>
 </head>
 <body>
+  <div class="topsidenav">
+    <input type="text" placeholder="Search..">
+</div>
+<div class="navbar-lagayan" id="design">
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="dental_logo.png" width="128" height="128">
+  </div>
+  
+        <div class="navbar-buttons1">
+            <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+        </div>
+        <div class="navbar-buttons2">
+            <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+        </div>
+        <div class="navbar-buttons3">
+            <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+        </div>
+
+    </div>
+    </div>
+
   <h1>Appointment Schedule</h1>
+  <div>
   <form method="GET" action="{% url 'appointment_schedule_view_present' %}">
-    <button type="submit" name="sort" value="date">Sort by Date</button>
-    <button type="submit" name="sort" value="time">Sort by Time</button>
+    <button type="submit" name="sort" value="view">View Future Appointments</button>
+    <button type="submit" name="sort" value="name">Sort by Name</button>
   </form>
+  <div class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Patient ID</div>
+        <div class="col col-2">Appointment Date</div>
+        <div class="col col-3">Appointment Time</div>
+        <div class="col col-4">Status</div>
+      </li>
+    {% for appointment in appointments %}
+      <li class="table-row">
+        <div class="col col-1" data-label="Patient Id">{{  appointment.patient_id }}</div>
+        <div class="col col-2" data-label="Appointment Date">{{ appointment.current_appointment_schedule }}</div>
+        <div class="col col-3" data-label="Appointment Time">{{ appointment.appointment_time }}</div>
+        <div class="col col-4" data-label="Status">{{ appointment.status }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+  </div>
+</div>
+  <!--
   <table>
     <thead>
       <tr>
@@ -23,9 +69,11 @@
           <td>{{ appointment.patient_id }}</td>
           <td>{{ appointment.current_appointment_schedule }}</td>
           <td>{{ appointment.appointment_time }}</td>
+          <td>{{ appointment.status }}</td>
         </tr>
       {% endfor %}
     </tbody>
   </table>
+   -->
 </body>
 </html>

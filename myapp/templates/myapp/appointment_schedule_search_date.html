@@ -30,6 +30,7 @@
         </div>
         </div>
         <!-- Put Content Here-->
+        <h2>date</h2>
         <form method="GET" action="{% url 'appointment_schedule_search_name' %}">
             {% csrf_token %}
             {{ form.as_p }}
@@ -41,7 +42,7 @@
             {{ form1.as_p }}
             <button type="submit">Search by Date</button>
           </form>
-
+      
       {% if appointment_schedules %}
           <h2>Appointment Schedules:</h2>
           <ul>

@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
     {%load static%}
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/design.css'%}"> -->
-    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design_choices.css'%}"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/design.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/design_choices.css'%}">
 
     <title>DCRS Dashboard</title>
     
@@ -28,18 +27,19 @@
             <div class="navbar-buttons3">
                 <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
             </div>
-        </div>
-    </div>
-        <!-- Put Content Here!-->
-        <h1>Patient List Test</h1>
 
-        <ul>
-            {% for patient_record in patient_records %}
-            <li><a href="{% url 'patient_record_detail' pk=patient_record.pk %}">{{ patient_record.last_name }}</a></li>
-            {% endfor %}
-        </ul>
-        
-        <a href="{% url 'patient_record_create' %}">Create New Patient Record</a>
-        
+        </div>
+        </div>
+
+        <div class="content" id="design_choices">
+            <div class="box-container">
+                <div class="apprec">
+                    <h2>Create</h2>
+                    <a href="{% url 'patient_record_view' %}"><button>Update Patient Record</button></a>
+                    <a href="{% url 'appointment_schedule_view' %}"><button>Appointment Schedule</button></a>
+                </div>
+            </div>
+        </div>
+
 </body>
 </html>

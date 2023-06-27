@@ -1,0 +1,254 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(0,212,255);
+    background: linear-gradient(90deg, rgba(0,212,255,1) 30%, rgba(41,41,194,1) 77%, rgba(21,14,136,1) 100%);
+}
+
+.topsidenav {
+    overflow: hidden;
+}
+
+.search-container input[type=text] {
+    padding: 6px;
+    border: none;
+    font-size: 15px;
+    border-radius: 12px;
+    width: 170px;
+    height: 25px;
+}
+
+.search-container button {
+    padding: 6px 10px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+}
+
+.topsidenav input[type=text] {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 6px;
+    border: none;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 12px;
+    width: 170px;
+    height: 25px;
+    background-image: url('search.png');
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding-left: 40px;
+  }
+  
+
+.navbar-lagayan {
+    width: 180px;
+    height: 90vh;
+    background-color: #ffffff;
+    position: fixed;
+    margin: 20px;
+    top: 20;
+    left: 20;
+    padding: 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    mix-blend-mode: normal;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.45);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-logo {
+    display: flex;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    border-radius: 25px;
+    margin-top: 40px;
+    margin-bottom: -60px;
+}
+
+.navbar-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 1.5s;
+}
+
+.navbar-buttons1 button:hover {
+    transform: scale(1.125);
+    transition: transform .4s;
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.navbar-buttons2 button:hover {
+    transform: scale(1.125);
+    transition: transform .4s;
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+
+}.navbar-buttons3 button:hover {
+    transform: scale(1.125);
+    transition: transform .4s;
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.navbar-buttons1 button {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 35px;
+    border: 0;
+    border-radius: 12px;
+    background: #4287F5;
+    mix-blend-mode: normal;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin: 25px;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.navbar-buttons2 button {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 35px;
+    border: 0;
+    border-radius: 12px;
+    background: #4287F5;
+    mix-blend-mode: normal;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin: 25px;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.navbar-buttons3 button {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 35px;
+    border: 0;
+    border-radius: 12px;
+    background: #4287F5;
+    mix-blend-mode: normal;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin: 25px;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.app button:hover {
+    transform: scale(1.125);
+    transition: transform .4s;
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.app button {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 35px;
+    border: 0;
+    border-radius: 12px;
+    background: #4287F5;
+    mix-blend-mode: normal;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin: 20px;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.rec button:hover {
+    transform: scale(1.125);
+    transition: transform .4s;
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.rec button {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 35px;
+    border: 0;
+    border-radius: 12px;
+    background: #4287F5;
+    mix-blend-mode: normal;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    font-size: 14px;
+    margin: 10px;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+.navbar-buttons1:active{
+    transform: scale(1.125);
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.navbar-buttons2:active{
+    transform: scale(1.125);
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.navbar-buttons3:active{
+    transform: scale(1.125);
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.app:active{
+    transform: scale(1.125);
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.rec:active{
+    transform: scale(1.125);
+    background-color: #deeeff;
+    color: rgb(17, 38, 107);
+}
+
+.calendar {
+        font-size: 18px;
+        font-weight: bold;
+}

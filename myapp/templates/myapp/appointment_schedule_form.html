@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Create Appointment</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/design_create.css' %}">
+  <title>Dental Patient Appointment Form</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     function fetchLatestAppointmentSchedule() {
@@ -23,13 +26,53 @@
   </script>
 </head>
 <body>
+  <div class="topsidenav">
+    <input type="text" placeholder="Search..">
+</div>
+<div class="navbar-lagayan" id="design">
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="dental_logo.png" width="128" height="128">
+  </div>
+  
+        <div class="navbar-buttons1">
+            <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+        </div>
+        <div class="navbar-buttons2">
+            <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+        </div>
+        <div class="navbar-buttons3">
+            <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+        </div>
+    </div>
+  </div>
+<div class= "form-lagayan" id = "design_create">
   <h1>Create Appointment</h1>
   <form method="POST">
     {% csrf_token %}
 
-    {{ form.as_p }}
-    
+    <div class="form-row">
+      <label for="{{ form.patient_id.id_for_label }}">patient id:</label>
+      {{ form.patient_id }}
+    </div>
+  
+    <div class="form-row">
+      <label for="{{ form.current_appointment_schedule.id_for_label }}">current appointment schedule:</label>
+      {{ form.current_appointment_schedule }}
+    </div>
+
+    <div class="form-row">
+      <label for="{{ form.appointment_time.id_for_label }}">Appointment Time:</label>
+      {{ form.appointment_time }}
+    </div>
+
+    <div class="form-row">
+      <label for="{{ form.procedure.id_for_label }}">Procedure:</label>
+      {{ form.procedure }}
+    </div>
+
     <input type="submit" value="Create Appointment">
   </form>
+</div>
 </body>
 </html>

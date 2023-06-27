@@ -1,14 +1,48 @@
-<h1>Patient Record Detail</h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+    {%load static%}
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design.css'%}"> -->
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design_choices.css'%}"> -->
+
+    <title>DCRS Dashboard</title>
+    
+</head>
+<body>
+    <div class="topsidenav">
+        <input type="text" placeholder="Search..">
+    </div>
+    <div class="navbar-lagayan" id="design">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <img src="dental_logo.png" width="128" height="128">
+			</div>
+			
+            <div class="navbar-buttons1">
+                <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+            </div>
+            <div class="navbar-buttons2">
+                <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+            </div>
+            <div class="navbar-buttons3">
+                <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+            </div>
+
+        </div>
+        </div>
+        <!-- Put Content Here!-->
+        <h1>Patient Record Detail</h1>
+
+        <p><strong>Last Name:</strong> {{ patient_record.last_name }}</p>
+        <p><strong>First name:</strong> {{ patient_record.first_name }}</p>
+        <p><strong>Age:</strong> {{ patient_record.age }}</p>
+        <p><strong>Sex:</strong> {{ patient_record.sex }}</p>
+        <p><strong>Contact Number:</strong> {{ patient_record.contact_number }}</p>
+        <p><strong>Email Address:</strong> {{ patient_record.email }}</p>
+
+        <a href="{% url 'patient_record_update' pk=patient_record.pk %}">Update</a>
 
 
-
-<p><strong>Last Name:</strong> {{ patient_record.last_name }}</p>
-<p><strong>First name:</strong> {{ patient_record.first_name }}</p>
-<p><strong>Age:</strong> {{ patient_record.age }}</p>
-<p><strong>Sex:</strong> {{ patient_record.sex }}</p>
-<p><strong>Contact Number:</strong> {{ patient_record.contact_number }}</p>
-<p><strong>Email Address:</strong> {{ patient_record.email }}</p>
-
-
-
-<a href="{% url 'patient_record_update' pk=patient_record.pk %}">Update</a>
+</body>
+</html>

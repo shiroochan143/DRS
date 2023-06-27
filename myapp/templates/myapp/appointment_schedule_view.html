@@ -1,9 +1,47 @@
-<h1>Appointment Schedule</h1>
 
-<ul>
-    {% for appointment_schedule in appointment_schedules %}
-    <li><a href="{% url 'appointment_schedule_detail' pk=appointment_schedule.pk %}">{{ appointment_schedule.patient_id }}</a></li>
-    {% endfor %}
-</ul>
 
-<a href="{% url 'appointment_schedule_create' %}">Create New Appointment Schedule</a>
+<!DOCTYPE html>
+<html>
+<head>
+    {%load static%}
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design.css'%}"> -->
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design_choices.css'%}"> -->
+
+    <title>DCRS Dashboard</title>
+    
+</head>
+<body>
+    <div class="topsidenav">
+        <input type="text" placeholder="Search..">
+    </div>
+    <div class="navbar-lagayan" id="design">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <img src="dental_logo.png" width="128" height="128">
+			</div>
+			
+            <div class="navbar-buttons1">
+                <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+            </div>
+            <div class="navbar-buttons2">
+                <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+            </div>
+            <div class="navbar-buttons3">
+                <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+            </div>
+
+        </div>
+        </div>
+        <!-- Put Content Here!-->
+        <h1>Appointment Schedule</h1>
+
+        <ul>
+            {% for appointment_schedule in appointment_schedules %}
+            <li><a href="{% url 'appointment_schedule_detail' pk=appointment_schedule.pk %}">{{ appointment_schedule.patient_id }} {{ appointment_schedule.current_appointment_schedule }} {{ appointment_schedule.status}}</a></li>
+            {% endfor %}
+        </ul>
+        
+        <a href="{% url 'appointment_schedule_create' %}">Create New Appointment Schedule</a>
+
+</body>
+</html>
