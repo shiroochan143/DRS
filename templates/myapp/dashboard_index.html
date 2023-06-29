@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard_index.css'%}">
+
+    <title>DCRS Dashboard</title>
+
+</head>
+<body>
+    <div class="navbar-lagayan" id="dashboard_index" >
+        <div class="navbar">
+            <div class="navbar-logo">
+                <a href = "{% url 'dashboard_index'%}"><img src="/static/css/images/dental_logo.png" width="128" height="128"></a>
+            </div>
+            
+            <div class="navbar-buttons1">
+                <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+            </div>
+            <div class="navbar-buttons2">
+                <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+            </div>
+            <div class="navbar-buttons3">
+                <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="content" id="dashboard_index">
+        <div class="box-container">
+            <div class="Welcome">
+                <h2>
+                    <span class="welcome-container">WELCOME!</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
+

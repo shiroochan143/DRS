@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(0, 212, 255);
+}
+
+.form-lagayan {
+  position: absolute;
+  width: 82vw;
+  height: 94vh;
+  left: 248px;
+  top: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  width: 90vw;
+  height: 85vh;
+}
+
+h1 {
+  margin: auto;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: -webkit-linear-gradient(left, #56d8e4, #4287F5, #1c1a8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form {
+  width: 800px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Updated to center the form rows */
+}
+
+.column {
+  width: 46%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Updated to center the form fields */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-row {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="date"],
+.form-group input[type="time"] {
+  width: 300px;
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.submit-button {
+  display: flex; 
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.submit-button button[type="submit"] {
+  display: inline-block;
+  width: 690px;
+  padding: 12px;
+  background: #4287F5;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.submit-button button:hover {
+  transform: scale(1.125);
+  transition: transform .4s;
+  background-color: #deeeff;
+  color: rgb(17, 38, 107);
+}
+
+/* Optional: Adjust styling for smaller screens */
+@media screen and (max-width: 480px) {
+  form {
+    width: 100%;
+  }
+  
+  .column {
+    width: 100%;
+  }
+}

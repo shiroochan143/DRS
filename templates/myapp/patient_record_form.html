@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard_index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pat_rec_form.css' %}">
+    <title>Dental Patient Appointment Form</title>
+
+</head>
+<body>
+<div class="navbar-lagayan" id="design">
+    <div class="navbar">
+        <div class="navbar-logo">
+          <a href = "{% url 'dashboard_index'%}"><img src="/static/css/images/dental_logo.png" width="128" height="128"></a>
+        </div>
+  
+        <div class="navbar-buttons1">
+            <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+        </div>
+        <div class="navbar-buttons2">
+            <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+        </div>
+        <div class="navbar-buttons3">
+            <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+        </div>
+    </div>
+</div>
+    <div class="form-lagayan" id = "design_create">
+        <div class="container">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="text">
+              <h1>Create Patient Record</h1>
+            </div>
+            
+            <div class="column">
+              <div class="form-group">
+                <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+                {{ form.first_name }} 
+              </div>
+            
+              <div class="form-group">
+                <label for="{{ form.age.id_for_label }}">Age:</label>
+                {{ form.age }}
+              </div>
+            
+              <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email Address:</label>
+                {{ form.email }}
+              </div>
+            </div>
+            
+            <div class="column">
+              <div class="form-group">
+                <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+                {{ form.last_name }}
+              </div>
+            
+              <div class="form-group">
+                <label for="{{ form.sex.id_for_label }}">Sex:</label>
+                {{ form.sex }}
+              </div>
+          
+              <div class="form-group">
+                <label for="{{ form.contact_number.id_for_label }}">Contact Number:</label>
+                {{ form.contact_number }}
+              </div>
+          
+            </div>
+            <div class="submit-button">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+</body>
+</html>

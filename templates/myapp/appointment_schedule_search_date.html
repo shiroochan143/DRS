@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {%load static%}
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/design.css'%}"> -->
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/design_choices.css'%}"> -->
+
+    <title>DCRS Dashboard</title>
+    
+</head>
+<body>
+
+    <div class="navbar-lagayan" id="design">
+        <div class="navbar">
+            <div class="navbar-logo">
+              <a href = "{% url 'dashboard_index'%}"><img src="/static/css/images/dental_logo.png" width="128" height="128"></a>
+			      </div>
+			
+            <div class="navbar-buttons1">
+                <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+            </div>
+            <div class="navbar-buttons2">
+                <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+            </div>
+            <div class="navbar-buttons3">
+                <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+            </div>
+        </div>
+        </div>
+        <!-- Put Content Here-->
+        <h2>date</h2>
+        <form method="GET" action="{% url 'appointment_schedule_search_name' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Search by Name</button>
+          </form>
+          
+          <form method="GET" action="{% url 'appointment_schedule_search_date' %}">
+            {% csrf_token %}
+            {{ form1.as_p }}
+            <button type="submit">Search by Date</button>
+          </form>
+      
+      {% if appointment_schedules %}
+          <h2>Appointment Schedules:</h2>
+          <ul>
+              <table>
+                  <thead>
+                    <tr>
+                      <th>Last Appointment</th>
+                      <th>Current Appointment Schedule</th>
+                      <th>Appointment Time</th>
+                      <th>Procedure</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% for appointment in appointment_schedules %}
+                      <tr>
+                        <td>{{ appointment.last_appointment }}</td>
+                        <td>{{ appointment.current_appointment_schedule }}</td>
+                        <td>{{ appointment.appointment_time }}</td>
+                        <td>{{ appointment.procedure }}</td>
+                        <td>{{ appointment.status }}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+          </ul>
+      {% else %}
+          <p>No appointment schedules found.</p>
+      {% endif %}
+</body>
+</html>

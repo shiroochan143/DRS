@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {%load static%}
+  
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard_index.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pat_rec_search_res.css' %}">
+    <title>Search Results</title>
+
+    
+</head>
+<body>
+    <div class="navbar-lagayan" id="design">
+        <div class="navbar">
+            <div class="navbar-logo">
+              <a href = "{% url 'dashboard_index'%}"><img src="/static/css/images/dental_logo.png" width="128" height="128"></a>
+			      </div>
+			
+            <div class="navbar-buttons1">
+                <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+            </div>
+            <div class="navbar-buttons2">
+                <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+            </div>
+            <div class="navbar-buttons3">
+                <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+            </div>
+
+        </div>
+        </div>
+        <!-- Put Content Here!-->
+        <div class="form-lagayan" id="app_sched_search">
+          <div class="container">
+            <h1>SEARCH RESULTS</h1>
+            {% if patient_records %}
+              <ul>
+                {% for patient in patient_records %}
+                <p><label>Patient ID: {{ patient.patient_id }}</label></p>
+                <p><label>Last Name: {{ patient.last_name }}</label></p>
+                <p><label>First Name: {{ patient.first_name }}</label></p>
+                <p><label>Age: {{ patient.age }}</label></p>
+                <p><label>Sex: {{ patient.sex }}</label></p>
+                <p><label>Contact Number: {{ patient.contact_number }}</label></p>
+                <p><label>Email Address: {{ patient.email }}</label></p>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <h2>No matching records found</h2>
+            {% endif %}
+          </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(0, 212, 255);
+}
+
+.form-lagayan {
+  position: absolute;
+  width: 80vw;
+  height: 94vh;
+  left: 248px;
+  top: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  width: 90vw;
+  height: 85vh;
+}
+
+h1 {
+  font-size: 55px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: -webkit-linear-gradient(left, #56d8e4, #4287F5, #1c1a8a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+  justify-content: right;
+  align-content: right;
+  text-align: center;
+  margin-bottom: 0px;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.results {
+  width: 750px;
+  height: 480px;
+  border-radius: 15px;
+  background-color: #4287F5;
+  mix-blend-mode: normal;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);
+  margin-bottom: 40px;
+}
+
+label {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: justify;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #ffffff;
+  margin: 20px;
+}

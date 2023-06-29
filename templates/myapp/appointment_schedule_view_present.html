@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard_index.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/app_sched_view_present.css' %}">
+<!--
+
+
+<script>
+  function handleButtonClick() {
+  // Get the scroll position before changing the URL
+  var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+  
+  // Change the URL using Django's template tags and AJAX
+  var newUrl = "{% url 'appointment_schedule_view_present' %}"; // Replace 'my_view' with the actual URL name
+  
+  // Use AJAX to call the Django view
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", newUrl, true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      // Restore the scroll position after the URL changes
+      window.scrollTo(0, scrollPosition);
+    }
+  };
+  xhr.send();
+}
+
+</script>
+-->
+  <title>Appointment Schedule</title>
+</head>
+<body>
+
+<div class="navbar-lagayan" id="dashboard_index">
+    <div class="navbar">
+        <div class="navbar-logo">
+          <a href = "{% url 'dashboard_index'%}"><img src="/static/css/images/dental_logo.png" width="128" height="128"></a>
+        </div>
+  
+        <div class="navbar-buttons1">
+            <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+        </div>
+        <div class="navbar-buttons2">
+            <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+        </div>
+        <div class="navbar-buttons3">
+            <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+        </div>
+
+    </div>
+    </div>
+    <div class="container_white" style="  display:flex;
+    position: absolute;
+    width: 82vw;
+    height: 94vh;
+    margin-left: 248px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.35);">
+    <div class="form-lagayan" id="app_sched_view_present">
+      <div class="container">
+  <h2>APPOINTMENT SCHEDULE</h2>
+  <form method="GET" action="{% url 'appointment_schedule_view_present' %}">
+    <div class="sort-buttons">
+    <button type="submit" onclick="handleButtonClick()" name="sort" value="view">View Future Appointments</button>
+    <button type="submit" onclick="handleButtonClick()" name="sort" value="name">Sort by Name</button>
+    </div>  
+  </form>
+  <div class="container1">
+      <div class="search_bar">
+      <form method="GET" action="">
+        {{ form.as_p }}
+        <button type="submit">Search by Name</button>
+      </form>
+      
+      <form method="GET" action="">
+        {{ form1.as_p }}
+        <button type="submit">Search by Date</button>
+      </form>
+    </div>
+    <ul class="responsive-table">
+      <li class="table-header" style="    width: 850px;
+      border-radius: 12px;
+      padding: 25px 40px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      background-color: #4287F5;
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #ffffff;">
+        <div class="col col-1">Patient ID</div>
+        <div class="col col-2">Appointment Date</div>
+        <div class="col col-3">Appointment Time</div>
+        <div class="col col-4">Status</div>
+      </li>
+    {% for appointment in appointments %}
+      <li class="table-row">
+        <div class="col col-1" data-label="Patient Id">{{  appointment.patient_id }}</div>
+        <div class="col col-2" data-label="Appointment Date">{{ appointment.current_appointment_schedule }}</div>
+        <div class="col col-3" data-label="Appointment Time">{{ appointment.appointment_time }}</div>
+        <div class="col col-4" data-label="Status">{{ appointment.status }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+  </div>
+  </div>
+  </div>
+</div>
+
+</body>
+</html>

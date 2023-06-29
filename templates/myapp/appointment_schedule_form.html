@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard_index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/app_sched_form.css' %}">
+  <title>Dental Patient Appointment Form</title>
+  <title>Dental Patient Appointment Form</title>
+  <!--
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function fetchLatestAppointmentSchedule() {
+      var patientId = $('#id_patient_id').val();
+      var url = '/fetch_latest_appointment_schedule/' + patientId + '/';
+      
+      $.ajax({
+        url: url,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          $('#id_last_appointment').val(data.last_appointment);
+        },
+        error: function() {
+          console.log('Error occurred while fetching latest appointment schedule.');
+        }
+      });
+    }
+  </script>
+      
+  -->
+</head>
+<body>
+<div class="navbar-lagayan" id="dashboard_index">
+    <div class="navbar">
+        <div class="navbar-logo">
+          <a href = "{% url 'dashboard_index'%}"><img src="/static/css/images/dental_logo.png" width="128" height="128"></a>
+        </div>
+  
+        <div class="navbar-buttons1">
+            <a href="{% url 'dashboard_create' %}"><button>CREATE</button></a>
+        </div>
+        <div class="navbar-buttons2">
+            <a href="{% url 'dashboard_view' %}"><button>VIEW</button></a>
+        </div>
+        <div class="navbar-buttons3">
+            <a href="{% url 'dashboard_update' %}"><button>UPDATE</button></a>
+        </div>
+    </div>
+  </div>
+  <div class= "form-lagayan" id = "app_sched_form">
+    <h1>CREATE APPOINTMENT SCHEDULE</h1>
+    <form method="POST">
+      {% csrf_token %}
+  
+    <div class="column">
+      <div class="form-row">
+        <label for="{{ form.patient_id.id_for_label }}">PATIENT ID:</label>
+        {{ form.patient_id }}
+      </div>
+    
+      <div class="form-row">
+        <label for="{{ form.current_appointment_schedule.id_for_label }}">CURRENT APPOINTMENT SCHEDULE:</label>
+        {{ form.current_appointment_schedule }}
+      </div>
+  
+      <div class="form-row">
+        <label for="{{ form.appointment_time.id_for_label }}">APPOINTMENT TIME:</label>
+        {{ form.appointment_time }}
+      </div>
+  
+      <div class="form-row">
+        <label for="{{ form.procedure.id_for_label }}">PROCEDURE:</label>
+        {{ form.procedure }}
+      </div>
+  
+      <div class="submit-button">
+        <button type="submit">SUBMIT</button>
+      </div>
+    </div>
+  
+    </form>
+  </div>
+</body>
+</html>
